@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Audio Control Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <!-- Use a sample audio URL or local file -->
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <div class="player-controls">
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="seek-handle"></div>
+                </div>
+                <span class="duration">0:00</span>
+            </div>
+            
+            <div class="main-controls">
+                <button id="prev-btn" class="control-btn">⏮</button>
+                <button id="play-pause-btn" class="control-btn play-btn">▶</button>
+                <button id="stop-btn" class="control-btn">⏹</button>
+                <button id="next-btn" class="control-btn">⏭</button>
+            </div>
+            
+            <div class="volume-container">
+                <button id="mute-btn" class="mute-btn" title="Mute/Unmute (M)">🔊</button>
+                <input type="range" id="volume-slider" min="0" max="100" value="100">
+                <span id="volume-value">100%</span>
+            </div>
+            
+            <div class="speed-container">
+                <label>Speed: </label>
+                <select id="speed-control">
+                    <option value="0.5">0.5x</option>
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="track-info">
+            <h3 id="track-title">Sample Track</h3>
+            <p id="track-artist">Unknown Artist</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
